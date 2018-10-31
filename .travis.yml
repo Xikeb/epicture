@@ -34,7 +34,7 @@ before_install:
   - sdkmanager "platform-tools" "build-tools;23.0.1" "cmake;3.6.4111459" "ndk-bundle" "platforms;android-21" "platforms;android-23" "extras;android;m2repository" "extras;google;m2repository"
   - fuse install android
   - echo y | sdkmanager 'ndk-bundle'
-  #- echo y | sdkmanager 'cmake;3.6.3155560'
+#  - echo y | sdkmanager 'cmake;3.6.3155560'
   - export ANDROID_HOME=$HOME/android/sdk
   - export ANDROID_NDK_HOME=$HOME/android/sdk/ndk-bundle
   script:
