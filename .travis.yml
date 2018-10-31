@@ -1,9 +1,5 @@
 language: android
-install:
-  - echo y | sdkmanager 'ndk-bundle'
-  #- echo y | sdkmanager 'cmake;3.6.3155560'
-  - export ANDROID_HOME=$HOME/android/sdk
-  - export ANDROID_NDK_HOME=$HOME/android/sdk/ndk-bundle
+#install:
 android:
   components:
     # Uncomment the lines below if you want to
@@ -27,15 +23,19 @@ android:
     # if you need to run emulator(s) during your tests
     - sys-img-armeabi-v7a-android-28
     - sys-img-armeabi-v7a-android-17
-  before_install:
-    -exit 1
-    - echo Superhero incoming
-    - wget --no-check-certificate https://www.apache.org/dist/ant/binaries/apache-ant-1.10.1-bin.tar.gz
-    - tar -xzvf apache-ant-1.10.1-bin.tar.gz
-    - export PATH=`pwd`/apache-ant-1.10.1/bin:$PATH
-    - echo Antman is $(ant -version)
-    - yes | sdkmanager "platforms;android-28" 1>/dev/null 2>/dev/null
-    - sdkmanager "platform-tools" "build-tools;23.0.1" "cmake;3.6.4111459" "ndk-bundle" "platforms;android-21" "platforms;android-23" "extras;android;m2repository" "extras;google;m2repository"
-    - fuse install android
+before_install:
+  -exit 1
+  - echo Superhero incoming
+  - wget --no-check-certificate https://www.apache.org/dist/ant/binaries/apache-ant-1.10.1-bin.tar.gz
+  - tar -xzvf apache-ant-1.10.1-bin.tar.gz
+  - export PATH=`pwd`/apache-ant-1.10.1/bin:$PATH
+  - echo Antman is $(ant -version)
+  - yes | sdkmanager "platforms;android-28" 1>/dev/null 2>/dev/null
+  - sdkmanager "platform-tools" "build-tools;23.0.1" "cmake;3.6.4111459" "ndk-bundle" "platforms;android-21" "platforms;android-23" "extras;android;m2repository" "extras;google;m2repository"
+  - fuse install android
+  - echo y | sdkmanager 'ndk-bundle'
+  #- echo y | sdkmanager 'cmake;3.6.3155560'
+  - export ANDROID_HOME=$HOME/android/sdk
+  - export ANDROID_NDK_HOME=$HOME/android/sdk/ndk-bundle
   script:
     - ./gradlew build --scan -s
