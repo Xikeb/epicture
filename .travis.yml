@@ -23,7 +23,6 @@ android:
     - sys-img-armeabi-v7a-android-28
     - sys-img-armeabi-v7a-android-17
 before_install:
-  -exit 1
   - echo Superhero incoming
   - wget --no-check-certificate https://www.apache.org/dist/ant/binaries/apache-ant-1.10.1-bin.tar.gz
   - tar -xzvf apache-ant-1.10.1-bin.tar.gz
