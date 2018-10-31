@@ -28,6 +28,7 @@ before_install:
 #  - tar -xzvf apache-ant-1.10.1-bin.tar.gz
 #  - export PATH=`pwd`/apache-ant-1.10.1/bin:$PATH
 #  - echo Antman is $(ant -version)
+  - echo -e '### User Sources for Android SDK Manager\n#Fri Nov 03 10:11:27 CET 2017 count=0' > $HOME/.android/repositories.cfg
   - echo y | sdkmanager "platforms;android-21"
   - echo y | sdkmanager "platforms;android-23"
   - echo y | sdkmanager "platforms;android-28"
