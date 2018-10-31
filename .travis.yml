@@ -1,5 +1,9 @@
 language: android
-#install: true
+install:
+  - echo y | sdkmanager 'ndk-bundle' 2>/dev/null >/dev/null
+  - echo y | sdkmanager 'cmake;3.6.3155560' 2>/dev/null >/dev/null
+  - export ANDROID_HOME=$HOME/android/sdk
+  - export ANDROID_NDK_HOME=$HOME/android/sdk/ndk-bundle
 android:
   components:
     # Uncomment the lines below if you want to
