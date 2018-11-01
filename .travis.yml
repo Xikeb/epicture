@@ -58,6 +58,6 @@ before_install:
   - export ANDROID_HOME=$HOME/android/sdk
   - export ANDROID_NDK_HOME=$HOME/android/sdk/ndk-bundle
   - yes |  sdkmanager --update
-  - yes | sdkmanager --licences
+  - yes | sdkmanager --licenses
 script:
   - echo y | ./gradlew build --scan -s
