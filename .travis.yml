@@ -29,8 +29,8 @@ android:
     - 'android-sdk-preview-license-52d11cd2'
     - 'android-sdk-license-.+'
     - 'google-gdk-license-.+'
-    - 'build-tools*'
-    - 'platform*'
+    - 'build-tools.*'
+    - 'platforms.*'
 before_install:
 #  - echo Superhero incoming
 #  - wget --no-check-certificate https://www.apache.org/dist/ant/binaries/apache-ant-1.10.1-bin.tar.gz
