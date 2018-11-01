@@ -29,6 +29,8 @@ android:
     - 'android-sdk-preview-license-52d11cd2'
     - 'android-sdk-license-.+'
     - 'google-gdk-license-.+'
+    - 'build-tools*'
+    - 'platform*'
 before_install:
 #  - echo Superhero incoming
 #  - wget --no-check-certificate https://www.apache.org/dist/ant/binaries/apache-ant-1.10.1-bin.tar.gz
@@ -55,6 +57,5 @@ before_install:
 #  - yes | sdkmanager "platform-tools" "build-tools;23.0.1" "cmake;3.6.4111459" "ndk-bundle" "platforms;android-21" "platforms;android-23" "extras;android;m2repository" "extras;google;m2repository"
   - export ANDROID_HOME=$HOME/android/sdk
   - export ANDROID_NDK_HOME=$HOME/android/sdk/ndk-bundle
-  - yes | sdkmanager --licenses
 script:
   - echo y | ./gradlew build --scan -s
