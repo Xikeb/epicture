@@ -57,5 +57,7 @@ before_install:
 #  - yes | sdkmanager "platform-tools" "build-tools;23.0.1" "cmake;3.6.4111459" "ndk-bundle" "platforms;android-21" "platforms;android-23" "extras;android;m2repository" "extras;google;m2repository"
   - export ANDROID_HOME=$HOME/android/sdk
   - export ANDROID_NDK_HOME=$HOME/android/sdk/ndk-bundle
+  - yes |  sdkmanager --update
+  - yes | sdkmanager --licences
 script:
   - echo y | ./gradlew build --scan -s
