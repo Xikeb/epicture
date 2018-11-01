@@ -29,6 +29,12 @@ before_install:
 #  - export PATH=`pwd`/apache-ant-1.10.1/bin:$PATH
 #  - echo Antman is $(ant -version)
   - echo -e '### User Sources for Android SDK Manager\n#Fri Nov 03 10:11:27 CET 2017 count=0' > $HOME/.android/repositories.cfg
+  - cd $HOME
+  - wget https://dl.google.com/android/repository/sdk-tools-linux-3859397.zip -O $HOME/android-sdk.tgz
+  - mkdir android
+  - unzip android-sdk.tgz -d android/sdk
+  - export PATH=$PATH:$HOME/android/sdk/tools:$HOME/android/sdk/tools/bin
+  - cd -
   - echo y | sdkmanager "platforms;android-21"
   - echo y | sdkmanager "platforms;android-23"
   - echo y | sdkmanager "platforms;android-28"
@@ -39,8 +45,6 @@ before_install:
   - echo y | sdkmanager "extras;android;m2repository"
   - echo y | sdkmanager "extras;google;m2repository"
 #  - yes | sdkmanager "platform-tools" "build-tools;23.0.1" "cmake;3.6.4111459" "ndk-bundle" "platforms;android-21" "platforms;android-23" "extras;android;m2repository" "extras;google;m2repository"
-#  - fuse install android
-  - echo y | sdkmanager 'ndk-bundle'
   - export ANDROID_HOME=$HOME/android/sdk
   - export ANDROID_NDK_HOME=$HOME/android/sdk/ndk-bundle
 script:
